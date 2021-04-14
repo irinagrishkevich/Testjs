@@ -150,49 +150,108 @@
 // console.log(john.armor)
 
 // /// ///// /////// работа с действиями с элементами на странице
-let box = document.getElementById('box'),
-  btn = document.getElementsByTagName('button'),
-  circle = document.getElementsByClassName('circle'),
-  heart = document.querySelectorAll('.heart'),
-  oneHeart = document.querySelector('.heart')
-wrapper = document.querySelector('.wrapper')
+// let box = document.getElementById('box'),
+//   btn = document.getElementsByTagName('button'),
+//   circle = document.getElementsByClassName('circle'),
+//   heart = document.querySelectorAll('.heart'),
+//   oneHeart = document.querySelector('.heart')
+// wrapper = document.querySelector('.wrapper')
 
-// console.log(oneHeart)
-// console.log(box)
-// console.log(heart)
-// console.log(circle[2])
-// console.log(btn)
-// console.log(btn[0])
+// // console.log(oneHeart)
+// // console.log(box)
+// // console.log(heart)
+// // console.log(circle[2])
+// // console.log(btn)
+// // console.log(btn[0])
 
-box.style.backgroundColor = 'blue'
-btn[1].style.borderRadius = '100%'
+// box.style.backgroundColor = 'blue'
+// btn[1].style.borderRadius = '100%'
 
-circle[0].style.backgroundColor = 'red'
-circle[1].style.backgroundColor = 'yellow'
-circle[2].style.backgroundColor = 'green'
+// circle[0].style.backgroundColor = 'red'
+// circle[1].style.backgroundColor = 'yellow'
+// circle[2].style.backgroundColor = 'green'
 
-// for (let i = 0; i < heart.length; i++) {
-//   heart[i].style.backgroundColor = 'black'
-// }
+// // for (let i = 0; i < heart.length; i++) {
+// //   heart[i].style.backgroundColor = 'black'
+// // }
 
-// heart.forEach((item, i, array) => (item.style.backgroundColor = 'blue'))
+// // heart.forEach((item, i, array) => (item.style.backgroundColor = 'blue'))
 
-let div = document.createElement('div'),
-  text = document.createTextNode('Тут был я !')
+// let div = document.createElement('div'),
+//   text = document.createTextNode('Тут был я !')
 
-div.classList.add('black')
+// div.classList.add('black')
 
-// document.body.appendChild(div)
-// wrapper.appendChild(div)
-let ara = prompt('hello')
+// // document.body.appendChild(div)
+// // wrapper.appendChild(div)
+// let ara = prompt('hello')
 
-div.textContent = ara
-// div.innerHTML = '<h2>hello world!</h2>'
+// div.textContent = ara
+// // div.innerHTML = '<h2>hello world!</h2>'
 
-document.body.insertBefore(div, btn[0])
-document.body.removeChild(circle[1])
-wrapper.removeChild(heart[1])
-document.body.replaceChild(btn[1], circle[1])
+// document.body.insertBefore(div, btn[0])
+// document.body.removeChild(circle[1])
+// wrapper.removeChild(heart[1])
+// document.body.replaceChild(btn[1], circle[1])
 
-console.log(div)
-console.log(text)
+// console.log(div)
+// console.log(text)
+
+//DOM для событий
+// let btn = document.querySelectorAll('button'),
+//   wrapper = document.querySelector('.wrapper'),
+//   link = document.querySelector('a')
+
+// btn[0].onclick = () => alert('вы нажали')
+
+// btn[0].addEventListener('click', (e) => {
+//   let target = e.target
+//   target.style.display = 'none'
+//   console.log('cobytie ' + e.type + ' na elemente ' + e.target)
+// })
+
+// wrapper.addEventListener('click', (e) => {
+//   console.log('cobytie ' + e.type + ' na elemente ' + e.target)
+// })
+
+// link.addEventListener('click', (e) => {
+//   e.preventDefault()
+//   console.log('cobytie ' + e.type + ' na elemente ' + e.target)
+// })
+
+// btn.forEach((item) => {
+//   item.addEventListener('mouseleave', () => {
+//     console.log('Вышли !')
+//   })
+// })
+// btn[0].addEventListener('mouseenter', () => {
+//   alert('ret')
+//   alert('ret22')
+// })
+
+//MOBILE
+
+//События
+//touchstart, touchmove,touchend, touchenter, touchleave,touchcancel
+
+// window.addEventListener('DOMContentLoaded', () => {
+//   let box = document.getElementById('btn')
+
+//   box.addEventListener('touchstart', (e) => {
+//     e.preventDefault()
+//     console.log('Red box')
+//   })
+//   box.addEventListener('touchmove', (e) => {
+//     e.preventDefault()
+//     console.log('Red box move')
+//   })
+//   box.addEventListener('touchend', (e) => {
+//     e.preventDefault()
+//     console.log('Red box end')
+//   })
+//   console.log(box)
+// })
+
+
+new RegExp('pattern','flags')
+/pattern/
