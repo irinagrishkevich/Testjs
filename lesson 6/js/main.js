@@ -23,7 +23,10 @@ let startBtn = document.getElementById('start'),
   dayValue = document.querySelector('.day-value')
 
 let money, time
-
+expensesBtn.disabled = true
+countBtn.disabled = true
+optionalexpensesBtn.disabled = true
+checkSavings.disabled = true
 startBtn.addEventListener('click', () => {
   money = +prompt('Ваш бюджет на месяц?', '')
   time = prompt('Введите дату в формате YYYY-MM-DD', '')
@@ -37,6 +40,10 @@ startBtn.addEventListener('click', () => {
   yearValue.value = new Date(Date.parse(time)).getFullYear()
   monthValue.value = new Date(Date.parse(time)).getMonth() + 1
   dayValue.value = new Date(Date.parse(time)).getDate()
+  expensesBtn.disabled = false
+  countBtn.disabled = false
+  optionalexpensesBtn.disabled = false
+  checkSavings.disabled = false
 })
 
 expensesBtn.addEventListener('click', () => {
