@@ -60,14 +60,13 @@ expensesBtn.addEventListener('click', () => {
       b != '' &&
       a.length < 10
     ) {
-      console.log('good')
       appData.expenses[a] = b
       sum += +b
     } else {
-      console.log('bad result')
       i--
     }
   }
+  appData.expenses = sum
   expensesValue.textContent = sum
 })
 
@@ -81,9 +80,8 @@ optionalexpensesBtn.addEventListener('click', () => {
 
 countBtn.addEventListener('click', () => {
   if (appData.budget != undefined) {
-    appData.moneyPerDay = (appData.budget / 30).toFixed()
+    appData.moneyPerDay = ((appData.budget - appData.expenses) / 30).toFixed()
     daybudgetValue.textContent = appData.moneyPerDay
-
     if (appData.moneyPerDay < 100) {
       levelValue.textContent = 'минимальный уровень достатка'
     } else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
