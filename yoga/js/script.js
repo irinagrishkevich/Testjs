@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   //timer
 
-  let deadLine = '2021-05-05'
+  let deadLine = '2021-05-07'
 
   function getTimeRemaining(endtime) {
     let t = Date.parse(endtime) - Date.parse(new Date()),
@@ -84,4 +84,26 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
   setClock('timer', deadLine)
+
+  //Modal
+
+  let more = document.querySelector('.more'),
+    overlay = document.querySelector('.overlay'),
+    close = document.querySelector('.popup-close')
+
+  more.addEventListener('click', () => {
+    overlay.style.display = 'block'
+    document.body.style.overflow = 'hidden'
+    this.classList.add('more-splash')
+  })
+  close.addEventListener('click', () => {
+    overlay.style.display = 'none'
+    more.classList.remove('more-splash')
+    document.body.style.overflow = ''
+  })
+  ;('use strict')
+  function hello() {
+    console.log(this)
+  }
+  hello()
 })
