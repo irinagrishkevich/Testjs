@@ -101,9 +101,58 @@ window.addEventListener('DOMContentLoaded', () => {
     more.classList.remove('more-splash')
     document.body.style.overflow = ''
   })
-  ;('use strict')
-  function hello() {
-    console.log(this)
+  //form
+
+  let message = {
+    loading: 'Загрузка...',
+    success: 'спасибо! мы скоро с вами свяжемся!',
+    failure: 'что-то пошло не так...',
   }
-  hello()
+
+  let form = document.querySelector('.main-form'),
+    input = document.getElementsByTagName('input'),
+    statusMessage = document.createElement('div')
+
+  statusMessage.classList.add('status')
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault()
+    form.appendChild(statusMessage)
+
+    let request = new XMLHttpRequest()
+    request.open('POST', 'server.php')
+
+    // form php
+    // request.setRequestHeader(
+    //   'Content-Type',
+    //   'application/x-www-form-urlencoded',
+    // )
+
+    //from json
+    request.setRequestHeader(
+      'Content-type',
+      'application/json; charset=utsf-8 ',
+    )
+    let formData = new FormData(form)
+
+    let obj = {}
+    formData.forEach(function (value, key) {
+      obj[key] = value
+    })
+    let json = JSON.stringify(obj)
+    request.send(json)
+    request.addEventListener('readystatechange', function () {
+      if (request.readyState < 4) {
+        statusMessage.innerHTML = message.loading
+      } else if (request.readyState === 4 && request.status == 200) {
+        statusMessage.innerHTML = message.success
+      } else {
+        statusMessage.innerHTML = message.failure
+      }
+    })
+
+    for (let i = 0; i < input.length; i++) {
+      input[i].value = ''
+    }
+  })
 })

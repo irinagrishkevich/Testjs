@@ -1,9 +1,9 @@
-let age = document.getElementById('age')
+// let age = document.getElementById('age')
 
-function showUser(surname, name) {
-  alert(
-    'Пользователь ' + surname + ' ' + name + ', его возраст ' + this.age.value,
-  )
-}
+// function showUser(surname, name) {
+//   alert(
+//     'Пользователь ' + surname + ' ' + name + ', его возраст ' + this.age.value,
+//   )
+// }
 
-showUser('Smit', 'Jack')
+// showUser('Smit', 'Jack')
