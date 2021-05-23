@@ -162,7 +162,8 @@ window.addEventListener('DOMContentLoaded', () => {
     prev = document.querySelector('.prev'),
     next = document.querySelector('.next'),
     dotsWrap = document.querySelector('.slider-dots'),
-    dots = document.querySelectorAll('.dot')
+    dots = document.querySelectorAll('.dot'),
+    timeId
 
   showSlides(slideIndex)
 
@@ -176,6 +177,7 @@ window.addEventListener('DOMContentLoaded', () => {
     slides.forEach((item) => {
       item.style.display = 'none'
     })
+
     // for (let i = 0; i<slides.length;i++){
     //   slides[i].style.display = 'none'
     // }
@@ -183,6 +185,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
     slides[slideIndex - 1].style.display = 'block'
     dots[slideIndex - 1].classList.add('dot-active')
+
+    clearInterval(timeId)
+    timeId = setInterval(function () {
+      if (slideIndex == slides.length) {
+        slideIndex = 0
+      }
+      slideIndex++
+      showSlides()
+    }, 8000)
   }
 
   function plusSlides(n) {
